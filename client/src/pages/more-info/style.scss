@@ -1,0 +1,25 @@
+.moreinfo {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.moreinfo__info {
+    &-head {
+        margin-bottom: 2rem;
+    }
+
+    &-desc {
+        flex: 1;
+    }
+
+    &-meta {
+        margin-top: 2rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,45 @@
+.formbook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__book {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+        height: 100%;
+        align-content: center;
+        flex-wrap: wrap;
+
+        div {
+            flex: 1;
+            text-align: center;
+        }
+
+        @media (max-width: 687px) {
+            flex-direction: column;
+        }
+    }
+
+    &__input {
+        height: 41px;
+        width: 86%;
+        border-radius: 5px;
+        padding: 0 5px;
+        margin-top: 10px;
+    }
+    &__textarea {
+        width: 87%;
+        height: 107px;
+    }
+
+    &__btn {
+        height: 35px;
+        width: 40%;
+        border-radius: 5px;
+        padding: 5px;
+        border: none;
+    }
+}

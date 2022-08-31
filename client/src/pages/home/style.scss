@@ -1,0 +1,30 @@
+.home {
+    &__books {
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        &-item {
+            width: 290px;
+            height: 200px;
+            padding: 10px;
+
+            border-radius: 5px;
+            border: 1px solid white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}
+
+h2 {
+    color: white;
+}

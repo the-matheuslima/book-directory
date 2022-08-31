@@ -1,0 +1,35 @@
+a {
+  color: black;
+  text-decoration: inherit;
+}
+a:hover {
+  color: black;
+}
+
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::after,
+**::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light dark;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
