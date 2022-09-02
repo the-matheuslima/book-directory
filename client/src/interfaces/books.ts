@@ -11,6 +11,15 @@ export interface IBooks {
 	website: string;
 }
 
+export interface IBooksForm {
+	title: string;
+	subtitle: string;
+	description: string;
+	website: string;
+	publisher: string;
+	author: string;
+}
+
 export interface IBooksSubmit {
 	title: string;
 	id?: string;

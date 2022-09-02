@@ -1,15 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BooksContext } from "../../context/books/filter-provider";
 import { MdOutlineClose } from "react-icons/md";
-// import './style.scss';
 import FormBook from "../form-book";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import axios from "axios";
 
 function UpdateBook() {
-    const a = useParams();
-    console.log(a);
+    const [urlParms, setUrlParms] = useSearchParams();
 
-    const { handlerUpdateBook, handlerSubmit } = useContext(BooksContext);
+    const { handlerUpdateBook, handlerSubmitUpdate, setformFields } = useContext(BooksContext);
+
+    useEffect(() => {
+        console.log(urlParms.get('update'));
+    }, [urlParms])
 
     return (
         <div className="addbook">
@@ -17,7 +20,7 @@ function UpdateBook() {
                 <button className="addbook__box-close" onClick={handlerUpdateBook}><MdOutlineClose fontSize={'1.2rem'} /></button>
 
                 <h3> Update Book To List</h3>
-                <FormBook onSubmit={handlerSubmit} />
+                <FormBook onSubmit={() => handlerSubmitUpdate(urlParms.get('update'))} />
             </div>
         </div>
     );

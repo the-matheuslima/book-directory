@@ -1,36 +1,30 @@
-import React, { useState } from "react";
-import { IBooksSubmit } from "../../interfaces/books";
+import { useContext } from "react";
+import { BooksContext } from "../../context/books/filter-provider";
 import './style.scss';
 
-
 type Props = {
-    onSubmit: ({ title, subtitle, description, website, publisher, author }: IBooksSubmit) => void
+    onSubmit: () => void
 };
 
 function FormBook({ onSubmit }: Props) {
-    const [title, setTitle] = useState('');
-    const [subtitle, setSubtitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [website, setWebsite] = useState('');
-    const [publisher, setPublisher] = useState('');
-    const [author, setAuthor] = useState('');
 
+    const { handlerForm, formFields } = useContext(BooksContext);
 
     return (
         <form className="formbook">
             <div className="formbook__book">
                 <div>
-                    <input type="text" required placeholder="title" className="formbook__input" onChange={(e) => setTitle(e.target.value)} />
-                    <input type="text" required placeholder="subtitle" className="formbook__input" onChange={(e) => setSubtitle(e.target.value)} />
-                    <input type="text" required placeholder="author" className="formbook__input" onChange={(e) => setAuthor(e.target.value)} />
-                    <input type="text" required placeholder="publisher" className="formbook__input" onChange={(e) => setPublisher(e.target.value)} />
+                    <input type="text" required placeholder="title" name="title" value={formFields.title} className="formbook__input" onChange={(e) => handlerForm(e)} />
+                    <input type="text" required placeholder="subtitle" name="subtitle" value={formFields.subtitle} className="formbook__input" onChange={(e) => handlerForm(e)} />
+                    <input type="text" required placeholder="author" name="author" value={formFields.author} className="formbook__input" onChange={(e) => handlerForm(e)} />
+                    <input type="text" required placeholder="publisher" name="publisher" value={formFields.publisher} className="formbook__input" onChange={(e) => handlerForm(e)} />
                 </div>
                 <div>
-                    <textarea required placeholder="description" className="formbook__textarea" onChange={(e) => setDescription(e.target.value)} ></textarea>
-                    <input type="text" placeholder="website" className="formbook__input" onChange={(e) => setWebsite(e.target.value)} />
+                    <input required placeholder="description" name="description" value={formFields.description} className="formbook__textarea" onChange={(e) => handlerForm(e)} ></input>
+                    <input type="text" placeholder="website" className="formbook__input" name="website" onChange={(e) => handlerForm(e)} />
                 </div>
             </div>
-            <input type="submit" className="formbook__btn" onClick={(e) => onSubmit({ e, title, subtitle, description, website, publisher, author })} value='Send book' />
+            <input type="button" className="formbook__btn" onClick={() => onSubmit()} value='Send book' />
         </form>
     );
 }
