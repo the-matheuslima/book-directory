@@ -12,8 +12,7 @@
 
 </p>
 
-<img src='./src/assets/image/screenshot.png' alt='screenshot'/>
-![](https://github.com/the-matheuslima/book-directory/client/src/assets/video.gif)
+![](https://github.com/the-matheuslima/book-directory/blob/main/client/src/assets/video.gif)
 
 <h2>🧾Descrição</h2>
 
